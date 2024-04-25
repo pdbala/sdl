@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <input type="text" id="username" name="username" required /><br /><br />
+    <input type="button" value="setCookie" onclick="setCookie()" />
+    <input type="button" value="getCookie" onclick="getCookie()" />
+     <button onclick="deleteCookie()">Delete Cookie</button>
+    <script>
+      function setCookie() {
+        var user = document.getElementById("username").value;
+     document.cookie = "username="+user+"; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
+      }
+      function getCookie() {
+        if (document.cookie.length != 0) {
+          alert(document.cookie);
+        } else {
+          alert("Cookie not available");
+        }
+      }
+       function deleteCookie() {
+            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            alert("Cookie deleted successfully!");
+        }
+    </script>
+  </body>
+</html>

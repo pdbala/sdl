@@ -1,0 +1,80 @@
+index.html:
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Contact Form - PHP/MySQL Demo Code</title>
+</head>
+
+<body>
+<fieldset>
+<legend>Contact Form</legend>
+<form name="frmContact" method="post" action="contact.php">
+<p>
+<label for="fname">fname </label>
+<input type="text" name="txtfname" id="txtfname">
+</p>
+<p>
+<label for="mname">mname</label>
+<input type="text" name="mname" id="mname">
+</p>
+<p>
+<label for="lname">lname</label>
+<input type="text" name="lname" id="lname">
+</p>
+<p>
+<label for="pwd">pwd</label>
+<textarea name="txtpwd" id="txtpwd"></textarea>
+</p>
+<p>&nbsp;</p>
+<p>
+<input type="submit" name="Submit" id="Submit" value="Submit">
+</p>
+</form>
+</fieldset>
+</body>
+</html>
+
+contact.php:
+
+<?php
+// database connection code
+// $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
+
+$con = mysqli_connect('localhost', 'root', '','registration');
+
+// get the post records
+$txtfname = $_POST['txtfname'];
+$txtmname = $_POST['mname'];
+$txtlname = $_POST['lname'];
+$txtpwd = $_POST['txtpwd'];
+
+// database insert SQL code
+$sql = "INSERT INTO `registration` (`Id`, `fname`, `mname`, `lname`, `pwd`) VALUES ('0', '$txtfname', '$txtmname', '$txtlname', '$txtpwd')";
+
+// insert in database 
+$rs = mysqli_query($con, $sql);
+
+if($rs)
+{
+	echo "Contact Records Inserted <br> <br>";
+	
+}
+$sql = 'SELECT * FROM registration';
+   
+   $retval = mysqli_query($con, $sql);
+   
+   
+   
+   while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
+      echo "EMP ID :{$row['id']}  <br> ".
+         "EMP First NAME : {$row['fname']} <br> ".
+         "EMP middle name : {$row['mname']} <br> ".
+		 "EMP Last name : {$row['lname']} <br> ".
+         "--------------------------------<br>";
+   }
+   
+   echo "Fetched data successfully\n";
+   
+  
+?>

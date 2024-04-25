@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field-Level Validation</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 20px;
+    }
+    .container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #4267B2;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #405d9b;
+    }
+    .error {
+        color: red;
+        font-size: 0.8rem;
+        display: none;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Registration Form</h2>
+    <form id="registrationForm" onsubmit="alert('Form submitted')">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error" id="nameError">Name is required</div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error" id="emailError">Email is required</div>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <div class="error" id="passwordError">Password is required</div>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <div class="error" id="dobError">Date of Birth is required</div>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById('registrationForm');
+
+    const showError = (input) => {
+        const error = document.getElementById(`${input.id}Error`);
+        error.style.display = 'block';
+    };
+
+    const hideError = (input) => {
+        const error = document.getElementById(`${input.id}Error`);
+        error.style.display = 'none';
+    };
+
+    const validateInput = (input) => {
+        if (input.value.trim() === '') {
+            showError(input);
+        } else {
+            hideError(input);
+        }
+    };
+
+    // form.addEventListener('submit', (event) => {
+    //     event.preventDefault();
+    //     validateInput(form.name);
+    //     validateInput(form.email);
+    //     validateInput(form.password);
+    //     validateInput(form.dob);
+    // });
+
+    form.addEventListener('input', (event) => {
+       // if (event.target.tagName.toLowerCase() === 'input') {
+            validateInput(event.target);
+        //}
+    });
+</script>
+</body>
+</html>

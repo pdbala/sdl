@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="radio"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+</style>
+</head>
+<body>
+<h1>Feedback Form</h1>
+<form  onsubmit="alert('form submmited');">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label>Satisfaction Level:</label><br>
+    <input type="radio" id="satisfaction-good" name="satisfaction" value="good" required>
+    <label for="satisfaction-good">Good</label>
+    
+    <input type="radio" id="satisfaction-satisfied" name="satisfaction" value="satisfied" required>
+    <label for="satisfaction-satisfied">Satisfied</label>
+    
+    <input type="radio" id="satisfaction-not-satisfied" name="satisfaction" value="not-satisfied" required>
+    <label for="satisfaction-not-satisfied">Not Satisfied</label>
+    
+    <label for="subject1">Subject 1:</label>
+    <input type="radio" id="subject1-good" name="subject1" value="good" required>
+    <label for="subject1-good">Good</label>
+    
+    <input type="radio" id="subject1-satisfied" name="subject1" value="satisfied" required>
+    <label for="subject1-satisfied">Satisfied</label>
+    
+    <input type="radio" id="subject1-not-satisfied" name="subject1" value="not-satisfied" required>
+    <label for="subject1-not-satisfied">Not Satisfied</label>
+    
+    <label for="subject2">Subject 2:</label>
+    <input type="radio" id="subject2-good" name="subject2" value="good" required>
+    <label for="subject2-good">Good</label>
+    
+    <input type="radio" id="subject2-satisfied" name="subject2" value="satisfied" required>
+    <label for="subject2-satisfied">Satisfied</label>
+    
+    <input type="radio" id="subject2-not-satisfied" name="subject2" value="not-satisfied" required>
+    <label for="subject2-not-satisfied">Not Satisfied</label>
+    
+    <label for="subject3">Subject 3:</label>
+    <input type="radio" id="subject3-good" name="subject3" value="good" required>
+    <label for="subject3-good">Good</label>
+    
+    <input type="radio" id="subject3-satisfied" name="subject3" value="satisfied" required>
+    <label for="subject3-satisfied">Satisfied</label>
+    
+    <input type="radio" id="subject3-not-satisfied" name="subject3" value="not-satisfied" required>
+    <label for="subject3-not-satisfied">Not Satisfied</label>
+    
+    <label for="message">Additional Comments:</label>
+    <textarea id="message" name="message" rows="4" cols="50"></textarea>
+    
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
