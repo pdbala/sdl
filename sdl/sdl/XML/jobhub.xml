@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobhub xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="jobhub.xsd">
+  
+  <!-- Job Postings -->
+  <job_posting job_id="001">
+    <title>Software Engineer</title>
+    <role>Developing software applications</role>
+    <salary>8000</salary>
+    <criteria>
+      <skill>Java</skill>
+      <skill>Python</skill>
+      <skill>JavaScript</skill>
+      <skill>C++</skill>
+    </criteria>
+  </job_posting>
+  
+  <job_posting job_id="002">
+    <title>Data Scientist</title>
+    <role>Analyzing large datasets</role>
+    <salary>100000</salary>
+    <criteria>
+      <skill>Machine Learning</skill>
+      <skill>Statistics</skill>
+      <skill>R</skill>
+      <skill>Python</skill>
+    </criteria>
+  </job_posting>
+
+  <!-- Job Candidates -->
+  <candidate>
+    <name>Mark ZUckerberg</name>
+    <skills>
+      <skill>Java</skill>
+      <skill>Python</skill>
+      <skill>JavaScript</skill>
+    </skills>
+    <education>Bachelor's in Computer Science</education>
+  </candidate>
+  
+  <candidate>
+    <name>Sam Altman</name>
+    <skills>
+      <skill>Machine Learning</skill>
+      <skill>Python</skill>
+      <skill>R</skill>
+    </skills>
+    <education>Master's in Statistics</education>
+  </candidate>
+  
+</jobhub>

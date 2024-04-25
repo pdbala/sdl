@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm" method="POST" action="" onsubmit="return submitValidation()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" onblur="fieldValidation(this)">
+        <span id="usernameError" class="error"></span><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" onblur="fieldValidation(this)">
+        <span id="passwordError" class="error"></span><br><br>
+        
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        function fieldValidation(inputElement) {
+            var inputValue = inputElement.value.trim();
+            var errorElement = inputElement.nextElementSibling;
+
+            errorElement.innerHTML = '';
+
+            if (inputValue === '') {
+                errorElement.innerHTML = inputElement.name + ' is required';
+                return false;
+            }
+
+            return true;
+        }
+
+        function submitValidation() {
+            var usernameValid = fieldValidation(document.getElementById('username'));
+            var passwordValid = fieldValidation(document.getElementById('password'));
+
+            return usernameValid && passwordValid;
+        }
+    </script>
+</body>
+</html>
